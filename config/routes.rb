@@ -1,11 +1,16 @@
 Boardcaster::Application.routes.draw do
-  
+
   root :to => "pages#home"
   
   match '/contact', :to => 'pages#contact'
   match '/help',    :to => 'pages#help'
   match '/about',   :to => 'pages#about'
-
+  
+  get "logout" => "sessions#destroy", :as => "logout"  
+  get "login" => "sessions#new", :as => "login"  
+  get "signup" => "users#new", :as => "signup"  
+  resources :users  
+  resources :sessions  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

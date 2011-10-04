@@ -13,6 +13,7 @@ end
 gem 'jquery-rails'
 gem 'thin'
 gem 'heroku'
+gem 'sorcery'  
 
 group :production do
   gem 'pg'

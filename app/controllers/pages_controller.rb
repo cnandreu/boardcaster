@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   
+  before_filter :require_login, :only => :about
+  
   def home
     @title = "Home"
   end

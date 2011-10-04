@@ -2322,6 +2322,7 @@ button.btn::-moz-focus-inner, input[type=submit].btn::-moz-focus-inner {
 .label.notice {
   background-color: #62cffc;
 }
+
 .media-grid {
   margin-left: -20px;
   margin-bottom: 0;

@@ -1,17 +1,26 @@
 <h1>Log in</h1>  
   
-<%= form_tag sessions_path do %>  
-  <div class="field">  
+<%= form_tag sessions_path, :class => "form-stacked" do %>  
+<fieldset>	
+	
+<div class="clearfix">  
     <%= label_tag :email %>  
-    <%= text_field_tag :email, params[:email] %>  
-  </div>  
-  <div class="field">  
+	<div class="input"> 
+    <%= text_field_tag :email, params[:email] %>
+  	</div>
+</div>  
+  
+<div class="clearfix">  
     <%= label_tag :password %>  
-    <%= password_field_tag :password %>  
-  </div>  
-  <div class="field">  
-    <%= check_box_tag :remember_me, 1, params[:remember_me] %>  
-    <%= label_tag :remember_me %>  
-  </div>  
-  <div class="actions"><%= submit_tag "Log in" %></div>  
+	<div class="input">
+    	<%= password_field_tag :password %>  
+  	</div>
+</div>
+  
+<div class="clearfix"> 
+	<%= check_box_tag :remember_me, 1, params[:remember_me] %>  
+    <%= content_tag :span, "Remember Me"  %>   
+<fieldset>	
+
+  <div class="actions"><%= submit_tag "Log in", :class => 'btn primary' %></div>  
 <% end %>

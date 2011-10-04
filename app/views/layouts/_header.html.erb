@@ -3,10 +3,10 @@
     <div class="container">
 	  <%= link_to 'Boardcaster', root_path, :class=>'brand' %>
       <ul class="nav">
-		<li <%= check_active("home") %> ><%= link_to 'Home', root_path %></li>
-	    <li <%= check_active("about") %> ><%= link_to "About", about_path %></li>
-        <li <%= check_active("help") %> ><%= link_to "Help", help_path %></li>
-        <li <%= check_active("contact") %> ><%= link_to "Contact", contact_path %></li>
+		<%= navigation("home", 		root_path) %>
+		<%= navigation("about", 	about_path) %>
+		<%= navigation("help", 		help_path) %>
+		<%= navigation("contact", 	contact_path) %>
       </ul>
 	 <form class="pull-right" action="">
 		<input type="text" placeholder="Search" />

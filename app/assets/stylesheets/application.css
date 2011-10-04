@@ -5,3 +5,13 @@
  *= require_self
  *= require_tree . 
 */
+
+/*Compensate for the 40px the top header takes */
+.compensation{
+	margin-top: 65px;
+}
+
+/*Remove underline from title text in the header */
+.topbar-inner a:hover{
+	text-decoration: none;
+}

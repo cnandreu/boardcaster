@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
   def create
     @title = "Login"
-    user = login(params[:email], params[:password], params[:remember_me])
+    user = login(params[:username], params[:password], params[:remember_me])
     if user
       redirect_back_or_to root_url, :success => "Logged in!"
     else

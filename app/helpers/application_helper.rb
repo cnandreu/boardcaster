@@ -10,7 +10,7 @@ module ApplicationHelper
   end
   
   def check_active(page_name)
-   "active" if params[:action] == page_name
+    (!@title.nil? && (@title.include? page_name.capitalize) ) ? "active" : ""
   end
   
 end

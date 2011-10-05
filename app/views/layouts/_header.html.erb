@@ -3,17 +3,18 @@
     <div class="container">
 	  <%= link_to 'Boardcaster', root_path, :class=>'brand' %>
       <ul class="nav">
-		<%= navigation("home", 		root_path) %>
-		<%= navigation("about", 	about_path) %>
-		<%= navigation("help", 		help_path) %>
-		<%= navigation("contact", 	contact_path) %>
+		
+		<%= navigation "home", root_path %>
+		<%= navigation "about", about_path %>
+		<%= navigation "help", 	help_path %>
+		<%= navigation "contact", contact_path %>
 		<% if current_user %>
-		<%= navigation("#{current_user.username} Profile", 	"#") %>
-		<%= navigation("logout", 	logout_path) %>
+		<%= navigation "Profile", current_user %>
+		<%= navigation "logout", logout_path %>
 		<% else %>
-		<%= navigation("sign up", 	signup_path) %>
-		<%= navigation("login", 	login_path) %>
-		<% end %>
+		<%= navigation "sign up", signup_path %>
+		<%= navigation "login", login_path %> 
+		<% end %> 
       </ul>
 	 <form class="pull-right" action="">
 		<input type="text" placeholder="Search" />

@@ -1,2 +1,8 @@
-<h1>Games#show</h1>
-<p>Find me in app/views/games/show.html.erb</p>
+<div class="page-header">
+	<h1><%= @game.title %></h1>
+</div>
+
+<ul>
+<li><strong>White Player: </strong><%= @white.username %></li>
+<li><strong>Black Player: </strong><%= @black.username %></li>
+</ul>

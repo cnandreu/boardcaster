@@ -4,7 +4,7 @@
 <p>Vestibulum id ligula porta felis euismod semper. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 
 <% if current_user %>
-<%= content_tag :p, link_to("View Games", "#", :class=> "btn success large  pull-right") %>
+<%= content_tag :p, link_to("View Games", games_path, :class=> "btn success large  pull-right") %>
 <% else %>
 <%= content_tag :p, link_to("Register Now!", signup_path, :class=> "btn primary large pull-right") %>
 

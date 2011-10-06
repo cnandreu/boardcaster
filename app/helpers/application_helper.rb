@@ -6,11 +6,11 @@ module ApplicationHelper
   end
   
   def navigation(page_name, path)
-    content_tag :li, link_to(page_name.capitalize, path) , :class => check_active(page_name) 
+    content_tag :li, link_to(page_name, path) , :class => check_active(page_name) 
   end
   
   def check_active(page_name)
-    (!@title.nil? && (@title.include? page_name.capitalize) ) ? "active" : ""
+    (!@title.nil? && (@title.include? page_name) ) ? "active" : ""
   end
   
 end

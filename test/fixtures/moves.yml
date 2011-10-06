@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  game_id: 
+  user_id: 
+  move_data: MyString
+
+two:
+  game_id: 
+  user_id: 
+  move_data: MyString
+# == Schema Information
+#
+# Table name: moves
+#
+#  id         :integer         not null, primary key
+#  game_id    :integer
+#  user_id    :integer
+#  move_data  :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+

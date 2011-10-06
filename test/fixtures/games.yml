@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  user_id_white: 
+  user_id_black: 
+  title: MyString
+
+two:
+  user_id_white: 
+  user_id_black: 
+  title: MyString
+# == Schema Information
+#
+# Table name: games
+#
+#  id            :integer         not null, primary key
+#  user_id_white :integer
+#  user_id_black :integer
+#  title         :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#
+

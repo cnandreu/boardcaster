@@ -10,7 +10,8 @@ Boardcaster::Application.routes.draw do
   get "login" => "sessions#new", :as => "login"  
   get "signup" => "users#new", :as => "signup"  
   resources :users  
-  resources :sessions  
+  resources :sessions 
+  resources :games 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

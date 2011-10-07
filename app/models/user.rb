@@ -45,4 +45,3 @@ class User < ActiveRecord::Base
                        :length => { :within => 6..40 }
   
 end
-

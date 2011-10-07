@@ -12,7 +12,7 @@
 
 class Game < ActiveRecord::Base
   
-  attr_accessible :title
+  attr_accessible :title, :user_id_white, :user_id_black
   
   has_many :comments
   has_many :moves
@@ -22,5 +22,10 @@ class Game < ActiveRecord::Base
                             :foreign_key => 'user_id_white'
   belongs_to :black_user,   :class_name => 'User', 
                             :foreign_key => 'user_id_black'
+                                                        
+  validates :user_id_white, :presence => true
+  validates :user_id_black, :presence => true                          
+  validates :title,         :presence => true
+
 end
 

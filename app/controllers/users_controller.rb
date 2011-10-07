@@ -10,7 +10,6 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       auto_login(@user)
-      #redirect_to root_url, :success => "Signed up!"
       redirect_back_or_to root_url, :success => "Signed up!"
     else
       render :new

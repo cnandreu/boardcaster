@@ -1,5 +1,5 @@
 <h1>Log in</h1>  
-<p>If you don't have an account, <%= link_to "Register Here", signup_path %>.  
+<p>If you don't have an account, <%= link_to "Register Here", signup_path %>.</p>
 <%= form_tag sessions_path, :class => "form-stacked" do %>  
 <fieldset>	
 	
@@ -9,7 +9,7 @@
     <%= text_field_tag :username, params[:username] %>
   	</div>
 </div>  
-  
+
 <div class="clearfix">  
     <%= label_tag :password %>  
 	<div class="input">

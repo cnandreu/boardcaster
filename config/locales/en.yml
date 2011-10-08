@@ -3,3 +3,10 @@
 
 en:
   hello: "Hello world"
+  
+  activerecord:
+    attributes:
+      game:
+        title: "Game title"
+        user_id_white: "White player"
+        user_id_black: "Black player"

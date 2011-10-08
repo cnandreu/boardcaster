@@ -2,16 +2,7 @@
   
 <%= form_for(@game, :html => { :class => "form-stacked"} ) do |f| %>  
 
-<% if @game.errors.any? %>  
-  <div class="alert-message block-message error">  
-    <strong>Form is invalid</strong>  
-    <ul>  
-      <% for message in @game.errors.full_messages %>  
-        <li><%= message %></li>  
-      <% end %>  
-    </ul>  
-  </div>  
-<% end %>
+<%= render 'shared/error_messages', :target =>  @game %>
 
 <fieldset>	
 <div class="clearfix">

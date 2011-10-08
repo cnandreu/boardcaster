@@ -1,0 +1,10 @@
+<% if target.errors.any? %>  
+  <div class="alert-message block-message error">  
+    <strong>Form is invalid</strong>  
+    <ul>  
+      <% for message in target.errors.full_messages %>  
+        <li><%= message %></li>  
+      <% end %>  
+    </ul>  
+  </div>  
+<% end %>

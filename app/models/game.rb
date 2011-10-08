@@ -24,8 +24,14 @@ class Game < ActiveRecord::Base
                             :foreign_key => 'user_id_black'
                                                         
   validates :user_id_white, :presence => true
-  validates :user_id_black, :presence => true                          
+  validates :user_id_black, :presence => true
   validates :title,         :presence => true
+  
+  validate :different_players
+  
+  def different_players
+    errors.add(:players, "must be different") if (user_id_white == user_id_black)
+  end
+  
 
 end
-

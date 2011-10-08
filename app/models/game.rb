@@ -25,13 +25,18 @@ class Game < ActiveRecord::Base
                                                         
   validates :user_id_white, :presence => true
   validates :user_id_black, :presence => true
-  validates :title,         :presence => true
+  validates :title,         :presence => true,
+                            :uniqueness => { :case_sensitive => false }
   
   validate :different_players
+  validate :existence
   
   def different_players
     errors.add(:players, "must be different") if (user_id_white == user_id_black)
   end
   
+  def existence
+    errors.add(:players, "must exist") if (User.find_by_id(user_id_white).nil? || User.find_by_id(user_id_black).nil?)
+  end
 
 end

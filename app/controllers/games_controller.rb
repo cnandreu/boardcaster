@@ -9,10 +9,20 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
-    @title = "Game | #{@game.title}"
     
-    @white = User.find(@game.user_id_white)
-    @black = User.find(@game.user_id_black)
+    if
+      @title = "Game | #{@game.title}"
+    
+      @white = User.find_by_id(@game.user_id_white)
+      @black = User.find_by_id(@game.user_id_black)
+    
+      @comments = Comment.where(:game_id => @game.id)
+      @comment = Comment.new
+      
+    else
+      flash.now[:error] = "Game not found"
+      render :index
+    end
     
   end
 

@@ -6,6 +6,12 @@
  *= require_tree . 
 */
 
+/*Text box for comments*/
+textarea#message_area {
+  width: 400px;
+  height: 100px;
+}
+
 /*Compensate for the 40px the top header takes */
 .compensation{
 	margin-top: 65px;

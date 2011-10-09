@@ -9,7 +9,44 @@
 
 <h2>Game Board</h2>
 
+
 <div class="container">
 <div id="board"></div>
 </div>
+
+<h2>Comments</h2>
+
+<div class="container">
+<% if !@comments.nil? %>
+	<% @comments.each do |comment| %>
+		<p><%= comment.comment_data %></p>
+	<% end %>
+<% end %>
+</div>
   
+<h3>Leave a Comment</h3>
+
+<%= form_for(@comment, :html => { :class => "form-stacked"} ) do |f| %>  
+
+<%= render 'shared/error_messages', :target =>  @comment %>
+
+<fieldset>	
+	
+<%= f.hidden_field :game_id, :value => @game.id %>
+
+	
+<div class="clearfix">
+    <%= f.label :comment_data %> 
+	<div class="input"> 
+	<%= f.text_area :comment_data, :id => "message_area" %>  	
+  </div>
+</div>
+
+
+</fieldset>
+
+<div class="actions">
+	<%= f.submit 'Submit', :class => 'btn primary' %>
+</div>
+  
+<% end %>

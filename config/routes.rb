@@ -13,7 +13,9 @@ Boardcaster::Application.routes.draw do
   
   resources :users  
   resources :sessions 
-  resources :games 
+  resources :games
+  resources :comments
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

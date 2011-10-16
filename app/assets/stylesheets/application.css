@@ -6,6 +6,11 @@
  *= require_tree . 
 */
 
+/*Remove styling for like buttons*/
+form.like{
+margin-bottom: -8px;
+}
+
 /*Text box for comments*/
 textarea#message_area {
   width: 400px;

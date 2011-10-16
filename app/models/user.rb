@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   has_many :moves
   has_many :favorites
   
+  
   def games_all
        games_white + games_black
   end

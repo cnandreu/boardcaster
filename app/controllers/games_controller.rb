@@ -10,7 +10,7 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     
-    if
+    if !@game.nil?
       @title = "Game | #{@game.title}"
     
       @white = User.find_by_id(@game.user_id_white)
@@ -18,6 +18,8 @@ class GamesController < ApplicationController
     
       @comments = Comment.where(:game_id => @game.id)
       @comment = Comment.new
+      
+      @favorite = Favorite.new
       
     else
       flash.now[:error] = "Game not found"

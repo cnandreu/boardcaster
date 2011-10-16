@@ -15,6 +15,7 @@ Boardcaster::Application.routes.draw do
   resources :sessions 
   resources :games
   resources :comments
+  resources :favorites
   
 
   # The priority is based upon order of creation:

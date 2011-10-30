@@ -30,15 +30,21 @@ class GamesController < ApplicationController
 
   def new
     @title = "Create a Game"
-    @game = Game.new
-    @users = User
+    if !Game.nil? && Game.last.live
+      @game = Game.last
+      redirect_to @game, :flash => { :error => "Game in progress." }
+    else
+      @game = Game.new
+      @users = User
+    end
   end
   
   def create 
     @title = "Create a Game"
     @game = Game.new(params[:game])
+    @game.live = true
     if @game.save
-      redirect_to @game
+      redirect_to @game, :flash => { :success => "Game created!" }
     else
       render :new
     end

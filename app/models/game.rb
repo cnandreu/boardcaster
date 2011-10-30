@@ -8,6 +8,7 @@
 #  title         :string(255)
 #  created_at    :datetime
 #  updated_at    :datetime
+#  live          :boolean
 #
 
 class Game < ActiveRecord::Base
@@ -27,7 +28,9 @@ class Game < ActiveRecord::Base
   validates :user_id_black, :presence => true
   validates :title,         :presence => true,
                             :uniqueness => { :case_sensitive => false }
-  
+ 
+  validates :live, :presence => true
+
   validate :different_players
   validate :existence
   

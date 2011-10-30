@@ -1,4 +1,7 @@
 <div class="page-header">
+
+<%= render 'shared/error_messages', :target =>  @game %>
+
 	<h1><%= @game.title %></h1>
 	<%= form_for(@favorite, :html => { :class => "like"} ) do |frm| %>
 	<%= frm.hidden_field :game_id, :value => @game.id %>
@@ -18,10 +21,6 @@
 </ul>
 
 <h2>Game Board</h2>
-
-
-
-
 
 <div class="container">
 <div id="board"></div>
@@ -49,7 +48,7 @@
 
 	
 <div class="clearfix">
-    <%= f.label :comment_data %> 
+    <%= f.label :comment_data, "Type your comment here" %> 
 	<div class="input"> 
 	<%= f.text_area :comment_data, :id => "message_area" %>  	
   </div>

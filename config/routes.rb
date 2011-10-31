@@ -13,13 +13,16 @@ Boardcaster::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"  
   get "create" => "games#new", :as => "create"
   get "search" => "pages#search", :as => "search"
-  
+ 
+  post "moves" => "moves#create"
+  get "moves" => "moves#index"
+
   resources :users  
   resources :sessions 
   resources :games
   resources :comments
   resources :favorites
-  resources :moves
+  #resources :moves
   
 
   # The priority is based upon order of creation:

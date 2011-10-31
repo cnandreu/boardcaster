@@ -6,6 +6,11 @@
  *= require_tree . 
 */
 
+/*Twitter and facebook buttons in footer*/
+.spread{
+float: left;
+}
+
 .pull-left{
 float:left;
 }

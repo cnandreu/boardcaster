@@ -28,40 +28,7 @@ jQuery(document).ready(function() {
 
 
 
-  var chess3 = jQuery('#board3').chess({pgn : jQuery('#pgn-fischer-spassky').html()});
-  var chess4 = jQuery('#board4').chess({pgn : jQuery('#justdoeet').html()});
 
-    jQuery('#board3-back').click(function() {
-    chess3.transitionBackward();
-    jQuery("#board3-annot").text( chess3.annotation() );
-    return false;
-  });
-  
-  jQuery('#board3-next').click(function() {
-    chess3.transitionForward();
-    jQuery("#board3-annot").text( chess3.annotation() );
-    return false;
-  });
-  
-  jQuery('#board3-flip').click(function() {
-    chess3.flipBoard();
-    return false;
-  });  
-
-  jQuery('#board4-back').click(function() {
-    chess4.transitionBackward();
-    return false;
-  });
-  
-  jQuery('#board4-next').click(function() {
-    chess4.transitionForward();
-    return false;
-  });
-  
-  jQuery('#board4-flip').click(function() {
-    chess4.flipBoard();
-    return false;
-  }); 
 
 
 })

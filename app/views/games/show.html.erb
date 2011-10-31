@@ -16,8 +16,8 @@
 </div>
 <D-r>
 <ul>
-  <li><strong>White Player: </strong><%= @white.username %></li>
-  <li><strong>Black Player: </strong><%= @black.username %></li>
+  <li><strong>White Player: </strong><%= link_to @white.username, @white %></li>
+  <li><strong>Black Player: </strong><%= link_to @black.username, @black %></li>
 </ul>
 
 <h2>Game Board</h2>

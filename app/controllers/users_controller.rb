@@ -22,4 +22,19 @@ class UsersController < ApplicationController
     @games = Game.find_all_by_user_id_white(@user.id) + Game.find_all_by_user_id_black(@user.id)
   end
 
+  def edit
+    @title = "Edit User"
+    @user = current_user
+  end
+
+  def update
+    @user = current_user
+    if @user.update_attributes(params[:user])
+      redirect_to @user, :flash => { :success => "Profile updated." }
+    else
+      @title = "Edit user"
+      render 'edit'
+    end
+  end
+
 end

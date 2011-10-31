@@ -17,10 +17,19 @@ class Comment < ActiveRecord::Base
   belongs_to :player
   belongs_to :game
   
-  validates :comment_data,  :presence => true
+  validates :comment_data,  :presence => true,
+                            :length => {:minimum => 1,
+                                        :maximum => 750}
   validates :user_id,       :presence => true,
                             :numericality => true
   validates :game_id,       :presence => true,
                             :numericality => true
+
+  validate :existence
+
+  def existence
+    errors.add(:elements, "must exist") if (User.find_by_id(user_id).nil? ||
+                                            Game.find_by_id(game_id).nil?)
+  end
 
 end

@@ -30,7 +30,7 @@ class GamesController < ApplicationController
 
   def new
     @title = "Create a Game"
-    if !Game.nil? && Game.last.live
+    if !Game.last.nil? && Game.last.live
       @game = Game.last
       redirect_to @game, :flash => { :error => "Game in progress." }
     else

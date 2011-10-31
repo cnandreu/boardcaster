@@ -24,12 +24,15 @@ class Game < ActiveRecord::Base
   belongs_to :black_user,   :class_name => 'User', 
                             :foreign_key => 'user_id_black'
                                                         
-  validates :user_id_white, :presence => true
-  validates :user_id_black, :presence => true
+  validates :user_id_white, :presence => true,
+                            :numericality => true
+  validates :user_id_black, :presence => true,
+                            :numericality => true
   validates :title,         :presence => true,
                             :uniqueness => { :case_sensitive => false }
- 
-  validates :live, :presence => true
+
+  validates :live, :presence => true,
+                   :inclusion => {:in => [true, false]}
 
   validate :different_players
   validate :existence

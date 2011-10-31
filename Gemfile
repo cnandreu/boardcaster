@@ -2,7 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 gem 'rack', '1.3.3'
-#gem 'rake' , '>= 0.9.2'
 gem 'rake'
 gem 'annotate'
 
@@ -26,4 +25,11 @@ end
 group :development, :test do
   gem 'turn', :require => false
   gem 'sqlite3'
+  gem "rspec-rails"
+  gem "factory_girl_rails"
+  gem "capybara"
+  gem "guard-rspec"
+  gem "growl"
+  gem "growl_notify"
+  gem "rb-fsevent"
 end

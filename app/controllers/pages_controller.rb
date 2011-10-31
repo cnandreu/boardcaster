@@ -16,4 +16,9 @@ class PagesController < ApplicationController
     @title = "About"
   end
 
+  def search
+    @title = "Search Results"
+    @results = Game.search(params[:search])
+  end
+
 end

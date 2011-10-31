@@ -45,4 +45,13 @@ class Game < ActiveRecord::Base
     errors.add(:players, "must exist") if (User.find_by_id(user_id_white).nil? || User.find_by_id(user_id_black).nil?)
   end
 
+  def self.search(search)  
+    if search  
+     find(:all, :conditions => ['title LIKE ?', "%#{search}%"])  
+    else  
+      find(:all)  
+    end  
+  end  
+
+
 end

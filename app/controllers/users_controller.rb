@@ -19,6 +19,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @title = "Profile | #{@user.username}"
+    @games = Game.find_all_by_user_id_white(@user.id) + Game.find_all_by_user_id_black(@user.id)
   end
 
 end

@@ -9,6 +9,7 @@ class GamesController < ApplicationController
 
   def show
     @game = Game.find(params[:id])
+    @users = User
     
     if !@game.nil?
       @title = "Game | #{@game.title}"

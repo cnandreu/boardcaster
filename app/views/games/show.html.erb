@@ -1,64 +1,74 @@
 <div class="page-header">
 
-<%= render 'shared/error_messages', :target =>  @game %>
+  <%= render 'shared/error_messages', :target =>  @game %>
 
-	<h1><%= @game.title %></h1>
-	<%= form_for(@favorite, :html => { :class => "like"} ) do |frm| %>
-	<%= frm.hidden_field :game_id, :value => @game.id %>
-	
-	
-		<% if current_user.favorites.where(:game_id => @game.id).count == 0 %> 
-			<%= frm.submit 'Like Game', :class => 'btn primary pull-right' %>
-		<% else %>
-			<%= frm.submit 'Unlike Game', :class => 'btn success pull-right' %>
-		<% end %>
-	<% end %>
+  <h1><%= @game.title %></h1>
+  <%= form_for(@favorite, :html => { :class => "like"} ) do |frm| %>
+    <%= frm.hidden_field :game_id, :value => @game.id %>
+
+
+    <% if current_user.favorites.where(:game_id => @game.id).count == 0 %> 
+      <%= frm.submit 'Like Game', :class => 'btn primary pull-right' %>
+    <% else %>
+      <%= frm.submit 'Unlike Game', :class => 'btn success pull-right' %>
+    <% end %>
+  <% end %>
 </div>
-
+<D-r>
 <ul>
-<li><strong>White Player: </strong><%= @white.username %></li>
-<li><strong>Black Player: </strong><%= @black.username %></li>
+  <li><strong>White Player: </strong><%= @white.username %></li>
+  <li><strong>Black Player: </strong><%= @black.username %></li>
 </ul>
 
 <h2>Game Board</h2>
 
 <div class="container">
-<div id="board"></div>
+  <div id="board"></div>
 </div>
 
 <h2>Comments</h2>
 
 <div class="container">
-<% if !@comments.nil? %>
-	<% @comments.each do |comment| %>
-		<p><%= comment.comment_data %></p>
-	<% end %>
-<% end %>
+  <% if @comments.nil? %>
+    <p>No comments yet!</p>
+  <% else %>
+    <% @comments.each do |comment| %>
+
+      <blockquote>
+        <p><%= comment.comment_data %>
+        
+                 
+
+        
+        </p>
+               <small><%= @users.find_by_id(comment.user_id).username%></small>
+      </blockquote>
+    <% end %>
+  <% end %>
 </div>
-  
+
 <h3>Leave a Comment</h3>
 
 <%= form_for(@comment, :html => { :class => "form-stacked"} ) do |f| %>  
 
-<%= render 'shared/error_messages', :target =>  @comment %>
 
-<fieldset>	
-	
-<%= f.hidden_field :game_id, :value => @game.id %>
+  <fieldset>	
 
-	
-<div class="clearfix">
-    <%= f.label :comment_data, "Type your comment here" %> 
-	<div class="input"> 
-	<%= f.text_area :comment_data, :id => "message_area" %>  	
+    <%= f.hidden_field :game_id, :value => @game.id %>
+
+
+    <div class="clearfix">
+      <%= f.label :comment_data, "Type your comment here" %> 
+      <div class="input"> 
+        <%= f.text_area :comment_data, :id => "message_area" %>  	
+      </div>
+    </div>
+
+
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'btn primary' %>
   </div>
-</div>
 
-
-</fieldset>
-
-<div class="actions">
-	<%= f.submit 'Submit', :class => 'btn primary' %>
-</div>
-  
 <% end %>

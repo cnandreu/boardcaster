@@ -6,6 +6,10 @@
  *= require_tree . 
 */
 
+.pull-left{
+float:left;
+}
+
 /*Remove styling for like buttons*/
 form.like{
 margin-bottom: -8px;

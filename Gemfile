@@ -3,7 +3,7 @@ source 'http://rubygems.org'
 gem 'rails', '3.1.0'
 gem 'rack', '1.3.3'
 gem 'rake'
-gem 'annotate'
+gem 'gravatar_image_tag'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -32,4 +32,5 @@ group :development, :test do
   gem "growl"
   gem "growl_notify"
   gem "rb-fsevent"
+  gem 'annotate'
 end

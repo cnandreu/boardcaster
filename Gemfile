@@ -16,7 +16,8 @@ end
 gem 'jquery-rails'
 gem 'thin'
 gem 'heroku'
-gem 'sorcery'  
+gem 'sorcery'
+gem 'kaminari'
 
 group :production do
   gem 'pg'

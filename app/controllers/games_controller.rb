@@ -5,6 +5,7 @@ class GamesController < ApplicationController
   def index
     @title = "View Games"
     @games = Game.all
+    #@games = Game.order("created_at").page(params[:page])
   end
 
   def show

@@ -14,7 +14,7 @@ class GamesController < ApplicationController
 
     move_array = Move.find_all_by_game_id(22).map{ |a| a.move_data.strip}
 
-    @alg_array = fenalg ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1"]
+    @alg_array = fenalg move_array 
 
     if !@game.nil?
       @title = "Game | #{@game.title}"

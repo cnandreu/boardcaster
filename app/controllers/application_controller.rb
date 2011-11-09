@@ -23,9 +23,9 @@ class ApplicationController < ActionController::Base
         if ra_chr != rb_chr
           if ra_chr == char
             if rb_chr.downcase == 'p'
-              moves.push("#{act_file}#{act_rank}")
+              moves.push("#{act_file.downcase}#{act_rank}")
             else
-              moves.push("#{rb_chr}#{act_file}#{act_rank}")
+              moves.push("#{rb_chr}#{act_file.downcase}#{act_rank}")
             end
           end
         end

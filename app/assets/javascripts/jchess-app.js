@@ -1,6 +1,6 @@
 jQuery(document).ready(function() {
 
-	
+/*	
 	   setInterval(function() {	
 		
 		$.get("/moves", function(result){
@@ -16,18 +16,34 @@ jQuery(document).ready(function() {
 		
 	   }, 1000);
 	   $.ajaxSetup({ cache: false });
-
+*/
 
   //setTimeout($('.success, .notice').fadeOut(5000), 15000);
 
 /*
   var chess2 = $('#board').chess({fen : "rnbqkbnr/pp1ppppp/8/2p5/4P3/5N2/PPPP1PPP/RNBQKB1R b KQkq - 1 2"});
 
-
 */
 
 
+  var chess3 = jQuery('#board3').chess({pgn : jQuery('#pgn-fischer-spassky').html()});
 
+  jQuery('#board3-back').click(function() {
+    chess3.transitionBackward();
+    jQuery("#board3-annot").text( chess3.annotation() );
+    return false;
+  });
+  
+  jQuery('#board3-next').click(function() {
+    chess3.transitionForward();
+    jQuery("#board3-annot").text( chess3.annotation() );
+    return false;
+  });
+  
+  jQuery('#board3-flip').click(function() {
+    chess3.flipBoard();
+    return false;
+  });  
 
 
 

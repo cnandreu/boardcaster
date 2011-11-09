@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   end
 
 
+  #FENs that dont work from the DB:
+  #  Move Load (0.3ms)  SELECT "moves".* FROM "moves" WHERE "moves"."game_id" = 22
+  #=> ["rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1", 
+  #    "rnbqkbnr/pp1ppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1"] 
 
   def fenalg(fens)
     moves = []

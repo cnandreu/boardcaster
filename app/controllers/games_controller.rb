@@ -1,7 +1,7 @@
 class GamesController < ApplicationController
-  
+
   before_filter :require_login, :only => [:index, :show, :new]
-  
+
   def index
     @title = "View Games"
     #@games = Game.all
@@ -11,23 +11,27 @@ class GamesController < ApplicationController
   def show
     @game = Game.find(params[:id])
     @users = User
-    
+
+    move_array = Move.find_all_by_game_id(22).map{ |a| a.move_data.strip}
+
+    @alg_array = fenalg ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1", "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq e3 0 1"]
+
     if !@game.nil?
       @title = "Game | #{@game.title}"
-    
+
       @white = User.find_by_id(@game.user_id_white)
       @black = User.find_by_id(@game.user_id_black)
-    
+
       @comments = Comment.where(:game_id => @game.id)
       @comment = Comment.new
-      
+
       @favorite = Favorite.new
-      
+
     else
       flash.now[:error] = "Game not found"
       render :index
     end
-    
+
   end
 
   def new
@@ -40,7 +44,7 @@ class GamesController < ApplicationController
       @users = User
     end
   end
-  
+
   def create 
     @title = "Create a Game"
     @game = Game.new(params[:game])
@@ -51,5 +55,6 @@ class GamesController < ApplicationController
       render :new
     end
   end
+
 
 end

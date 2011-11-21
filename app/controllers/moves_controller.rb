@@ -6,7 +6,16 @@ class MovesController < ApplicationController
     if !last_game.nil? 
       m.game_id = last_game.id
     end
-    m.move_data = params[:move_data]
+
+    data = params[:move_data]
+
+    m.move_data = data
+
+    if data == "***"
+        last_game.live = false
+        last_game.save
+    end
+
     if m.save
       render :text => "#{m.move_data}"
     else
@@ -16,12 +25,29 @@ class MovesController < ApplicationController
 
 
   def index
+    last_game = Game.last
     last_move = Move.last
-    if last_move.nil?
+
+    if !last_move.nil? and last_move.move_data == "***"
+      render :text => "***"
+    elsif last_move.nil? or !last_game.live or (last_game.id != last_move.game_id)
       render :text => "FAIL"
     else
       render :text => "#{last_move.move_data}"
     end
+  end
+
+  def mgame
+    last_game = Game.last
+    last_move = Move.last
+
+    if !last_move.nil? and last_move.move_data == "***"
+      last_move.destroy
+    end
+
+  redirect_to :controller => 'games', :action => :show, :id => last_game.id
+
+
   end
 
 end

@@ -6,8 +6,15 @@
  *= require_tree . 
 */
 
-.center{
-float: center;
+.controls{
+text-align:center;
+font-weight:bold;
+font-size: 1.3em;
+letter-spacing: 2px;
+}
+
+#pgn-string{
+  visibility:hidden;
 }
 
 /*Twitter and facebook buttons in footer*/

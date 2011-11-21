@@ -6,7 +6,8 @@ Boardcaster::Application.routes.draw do
   
   match '/contact', :to => 'pages#contact'
   match '/help',    :to => 'pages#help'
-  match '/about',   :to => 'pages#about'
+  match '/about',   :to => 'pages#about' 
+  match '/addfens',   :to => 'pages#addfens'
   
   get "logout" => "sessions#destroy", :as => "logout"  
   get "login" => "sessions#new", :as => "login"  
@@ -16,6 +17,7 @@ Boardcaster::Application.routes.draw do
  
   post "moves" => "moves#create"
   get "moves" => "moves#index"
+  get "mgame" => "moves#mgame" 
 
   resources :users  
   resources :sessions 

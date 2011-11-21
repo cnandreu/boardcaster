@@ -12,9 +12,12 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @users = User
 
-    move_array = Move.find_all_by_game_id(22).map{ |a| a.move_data.strip}
+    move_array = Move.find_all_by_game_id(@game).map{ |a| a.move_data.strip}
 
-    @alg_array = fenalg move_array 
+    #params[:move123] = move_array
+    move_array.delete_if{|i| i=="***" or i=="**"}
+
+    @pgn_string = fens2pgn(move_array) 
 
     if !@game.nil?
       @title = "Game | #{@game.title}"

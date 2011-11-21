@@ -6,7 +6,6 @@
   <%= form_for(@favorite, :html => { :class => "like"} ) do |frm| %>
     <%= frm.hidden_field :game_id, :value => @game.id %>
 
-
     <% if current_user.favorites.where(:game_id => @game.id).count == 0 %> 
       <%= frm.submit 'Like Game', :class => 'btn primary pull-right' %>
     <% else %>
@@ -14,7 +13,7 @@
     <% end %>
   <% end %>
 </div>
-<D-r>
+
 <ul>
   <li><strong>White Player: </strong><%= link_to @white.username, @white %></li>
   <li><strong>Black Player: </strong><%= link_to @black.username, @black %></li>
@@ -22,39 +21,22 @@
 
 <h2>Game Board</h2>
 
-<div class="container">
-  <div id="board"></div>
+<div class="container row">
+  <% if @game.live %>
+    <div id="board-live"></div>
+  <% else %>
+    <div id="board"></div>
+    <div class="controls">
+      <a id="board-back" href="#">Back</a> |
+      <a id="board-flip" href="#">Flip</a> |
+      <a id="board-next" href="#">Next</a> 
+      <p id="board-annot"></p>
+      <p id="pgn-string">      
+      <%= @pgn_string %>
+      </p>
+    </div>
+  <%end%>
 </div>
-
-<% @alg_array.each do |element| %>
-  <p>  <%= element %> </p>
-<%end%>
-
-
-  <h2>Chess Board Demo 3: PGN</h2>
-  <div class="center">
-    <a id="board3-back" href="#">Back</a>
-    <a id="board3-next" href="#">Next</a>
-    <a id="board3-flip" href="#">Flip</a>
-  </div>
-  <div id="board3"></div>
-  <p id="board3-annot"></p>
-  <p id="pgn-fischer-spassky">      
-    [Event "F/S Return Match"]
-    [Site "Belgrade, Serbia JUG"]
-    [Date "1992.11.04"]
-    [Round "29"]
-    [White "Fischer, Robert J."]
-    [Black "Spassky, Boris V."]
-    [Result "1/2-1/2"]
-
-    1.e4 c5 2.Nf3 nc6    
-    
-    
-    </p>
-
-
-
 
 <h2>Comments</h2>
 
@@ -65,13 +47,8 @@
     <% @comments.each do |comment| %>
 
       <blockquote>
-        <p><%= comment.comment_data %>
-        
-                 
-
-        
-        </p>
-               <small><%= @users.find_by_id(comment.user_id).username%></small>
+        <p><%= comment.comment_data %></p>
+        <small><%= @users.find_by_id(comment.user_id).username%></small>
       </blockquote>
     <% end %>
   <% end %>
@@ -81,11 +58,9 @@
 
 <%= form_for(@comment, :html => { :class => "form-stacked"} ) do |f| %>  
 
-
   <fieldset>	
 
     <%= f.hidden_field :game_id, :value => @game.id %>
-
 
     <div class="clearfix">
       <%= f.label :comment_data, "Type your comment here" %> 
@@ -93,7 +68,6 @@
         <%= f.text_area :comment_data, :id => "message_area" %>  	
       </div>
     </div>
-
 
   </fieldset>
 

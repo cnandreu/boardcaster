@@ -6,6 +6,12 @@
  *= require_tree . 
 */
 
+/*
+ * @author: Carlos Andreu
+ * Additional css/styling rules for the Website.
+ */
+
+/*Style the controls on game pages */
 .controls{
 text-align:center;
 font-weight:bold;
@@ -13,6 +19,7 @@ font-size: 1.3em;
 letter-spacing: 2px;
 }
 
+/*Hide the pgn string on game pages */
 #pgn-string{
   visibility:hidden;
 }
@@ -47,7 +54,10 @@ textarea#message_area {
 	text-decoration: none;
 }
 
-/*Working with the chessboard */
+/* 
+ * @author: Ben Marini (jChess 0.1.0 - Chess Library Built From jQuery)
+ * Styling the chessboard.
+ */
 .chess-board {
   margin: 0 auto;
   position: relative;
@@ -70,7 +80,6 @@ textarea#message_area {
 .chess-board .wR { background: transparent url(/assets/chess-sets/acmaster.gif) -136px -1px; }
 .chess-board .wQ { background: transparent url(/assets/chess-sets/acmaster.gif) -181px -1px; }
 .chess-board .wK { background: transparent url(/assets/chess-sets/acmaster.gif) -226px -1px; }
-
 .chess-board .bp { background: transparent url(/assets/chess-sets/acmaster.gif) -1px -46px; }
 .chess-board .bn { background: transparent url(/assets/chess-sets/acmaster.gif) -46px -46px; }
 .chess-board .bb { background: transparent url(/assets/chess-sets/acmaster.gif) -91px -46px; }

@@ -1,5 +1,12 @@
+# 
+# @author: Carlos Andreu
+#
+# Implements a non_authenticated method to prevent users from accessing some
+# pages. 
+
 class ApplicationController < ActionController::Base
   protect_from_forgery
+
 
   def not_authenticated
     redirect_to login_url, :alert => "First login to access this page."
@@ -7,6 +14,9 @@ class ApplicationController < ActionController::Base
 
 
 =begin
+
+Sample FENs for testing the fens2pgn() code below
+
 FENS = ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
         "rnbqkbnr/pppppppp/8/8/4P3/8/PPPP1PPP/RNBQKBNR b KQkq - 0 1",
         "rnbqkbnr/pp1ppppp/8/2p5/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 1",
@@ -24,7 +34,11 @@ FENS = ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
 
 =end
 
-  def fens2pgn(fens, event="Juan vs. Pedro",
+# @author: Francisco De La Cruz
+#
+# Output: PGN String
+# Input: FEN Array
+def fens2pgn(fens, event="Juan vs. Pedro",
              site="San Juan",
              date="1990.07.09",
              event_date="?",

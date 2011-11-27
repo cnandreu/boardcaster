@@ -1,3 +1,8 @@
+# 
+# @author Carlos Andreu
+#
+# Maps to the Moves table in the database.
+#
 # == Schema Information
 #
 # Table name: moves

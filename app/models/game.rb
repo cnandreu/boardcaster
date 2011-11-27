@@ -1,4 +1,7 @@
-# == Schema Information
+# 
+# @author Carlos Andreu
+#
+# Maps to the Games table in the database.
 #
 # Table name: games
 #
@@ -51,6 +54,5 @@ class Game < ActiveRecord::Base
       find(:all)  
     end  
   end  
-
 
 end

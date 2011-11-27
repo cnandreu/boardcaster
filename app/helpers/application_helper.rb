@@ -1,3 +1,8 @@
+#
+# @author: Carlos Andreu
+# def title: Sets the base title and dynamically modifies the title on other pages
+# def navigation, check_active: adds .active to the current page visited
+
 module ApplicationHelper
   
   def title

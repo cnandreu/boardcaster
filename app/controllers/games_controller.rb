@@ -1,33 +1,44 @@
+#
+# @author: Carlos Andreu
+# 
+# def index: Lists all games in the DB with pagina
+# def show: Presents users with game data, un/liked button and comments.
+# def new: If there is not a game in progress it allows users to create a new game
+# def create: Takes the input from the user in 'def new' and writes it to the DB
+#
 class GamesController < ApplicationController
 
   before_filter :require_login, :only => [:index, :show, :new]
 
   def index
     @title = "View Games"
+    #If you don't want pagination:
     #@games = Game.all
-    @games = Game.order("created_at").page(params[:page]).per(1)
+    @games = Game.order("created_at").page(params[:page]).per(5) #per = number of pages
   end
 
   def show
     @game = Game.find(params[:id])
     @users = User
 
+    #Get an Array of fens that match the current game id
     move_array = Move.find_all_by_game_id(@game).map{ |a| a.move_data.strip}
 
-    #params[:move123] = move_array
+    #Remove characters that mark an finished game
     move_array.delete_if{|i| i=="***" or i=="**"}
 
+    #Generate a PGN String based on the FEN Array, the method is in the
+    #"application_controller"
     @pgn_string = fens2pgn(move_array) 
 
     if !@game.nil?
       @title = "Game | #{@game.title}"
-
+c
       @white = User.find_by_id(@game.user_id_white)
       @black = User.find_by_id(@game.user_id_black)
 
       @comments = Comment.where(:game_id => @game.id)
       @comment = Comment.new
-
       @favorite = Favorite.new
 
     else
@@ -58,6 +69,5 @@ class GamesController < ApplicationController
       render :new
     end
   end
-
 
 end

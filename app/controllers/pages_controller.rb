@@ -1,3 +1,9 @@
+#
+# @author: Carlos Andreu
+#
+# def home, contact, help, about, search: sets the title for static pages
+# def seach: show search results
+
 class PagesController < ApplicationController
   
   def home
@@ -21,7 +27,10 @@ class PagesController < ApplicationController
     @results = Game.search(params[:search])
   end
 
+  # Code below is used just for testing if strings of fens and the end token (***)
+  # are interpreted correctly by the system.  
 
+private 
   def addfens
 
    my_fens = [

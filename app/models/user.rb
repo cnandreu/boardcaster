@@ -1,3 +1,8 @@
+# 
+# @author Carlos Andreu
+#
+# Maps to the User table in the database.
+#
 # == Schema Information
 #
 # Table name: users

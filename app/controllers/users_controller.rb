@@ -1,3 +1,11 @@
+#
+# @author: Carlos Andreu
+#
+# def new: Show the user sign up page
+# def create: Write a new user to the DB
+# def edit: Show the user edit page
+# def update: Write edit user modified values to the DB
+
 class UsersController < ApplicationController
 
   def new

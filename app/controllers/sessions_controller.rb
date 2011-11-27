@@ -1,3 +1,9 @@
+# 
+# @author: Carlos Andreu
+# def new: Show the login page
+# def create: sets the session cookie for a user if the credentials given are valid
+# def destroy: destroys the session cookie (user decided to logout)
+
 class SessionsController < ApplicationController
 
   def new

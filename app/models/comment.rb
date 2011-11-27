@@ -1,3 +1,8 @@
+# 
+# @author Carlos Andreu
+#
+# Maps to the Comments table in the database.
+#
 # == Schema Information
 #
 # Table name: comments

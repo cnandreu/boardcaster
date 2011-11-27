@@ -1,3 +1,9 @@
+#
+# @author: Carlos Andreu
+#
+# def create: Marks game as "Liked" if it's not liked and "Unliked" if it's
+# liked when clicked. 
+
 class FavoritesController < ApplicationController
  
   def create

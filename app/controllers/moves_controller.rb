@@ -1,3 +1,11 @@
+#
+# @author: Carlos Andreu
+#
+# def create: Write a new move to the DB
+# def index: show the last move on the DB for the last game
+# def mgame: destroy the finish game token (***) and redirect to current game
+# with replay controls
+
 class MovesController < ApplicationController
 
   def create
@@ -46,7 +54,6 @@ class MovesController < ApplicationController
     end
 
   redirect_to :controller => 'games', :action => :show, :id => last_game.id
-
 
   end
 

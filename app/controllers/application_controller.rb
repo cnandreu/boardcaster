@@ -1,7 +1,7 @@
 # 
 # @author: Carlos Andreu
 #
-# Implements a non_authenticated method to prevent users from accessing some
+# def non_authenticated: method to prevent users from accessing some
 # pages. 
 
 class ApplicationController < ActionController::Base
@@ -36,6 +36,7 @@ FENS = ["rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR b KQkq - 0 1",
 
 # @author: Francisco De La Cruz
 #
+# def fen2pgn and def fens2alg
 # Output: PGN String
 # Input: FEN Array
 def fens2pgn(fens, event="Juan vs. Pedro",

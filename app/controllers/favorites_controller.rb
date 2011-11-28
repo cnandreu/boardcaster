@@ -24,7 +24,11 @@ class FavoritesController < ApplicationController
       favorite.destroy_all
     end
      
-    redirect_to(@game)
+    respond_to do |format|
+        format.html { redirect_to @game }
+        format.js
+    #redirect_to(@game)
+      end
 
   end  
 end

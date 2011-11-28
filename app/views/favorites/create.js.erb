@@ -1,0 +1,10 @@
+var current_state = $("#FavButton").val();
+
+if(current_state == "Like Game"){
+    $("#FavButton").attr({value : "Unlike Game",
+                           class: "btn success pull-right"});
+}else{
+    $("#FavButton").attr({value:"Like Game",
+                          class: "btn primary pull-right"});
+} 
+

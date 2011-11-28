@@ -15,12 +15,22 @@
         <% end %> 
       </ul>
 
-      <%= form_tag search_path, :class => "pull-right", :method => 'get' do %>    
-        <%= text_field_tag :search, params[:search], :placeholder => "Search Here" %>  
-      <% end %>  
+      <%= form_tag search_path, :class => "pull-right", :method => 'get', :id => "live-search-form" do %>    
+        <%= text_field_tag :search, params[:search], :placeholder => "Search Here", :id => "big-search-box", :autocomplete=> "off" %>  
+      <% end %> 
+
+      <div id="live-search-results"></div>
 
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="span6 offset12">
+    
+  </div>
+</div>
+
+      
 
 

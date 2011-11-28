@@ -27,6 +27,11 @@ class PagesController < ApplicationController
     @results = Game.search(params[:search])
   end
 
+  def live_search
+    @results = Game.search(params[:search])
+    render :layout => false
+  end
+
   # Code below is used just for testing if strings of fens and the end token (***)
   # are interpreted correctly by the system.  
 

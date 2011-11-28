@@ -11,6 +11,57 @@
  * Additional css/styling rules for the Website.
  */
 
+#live-search-results span{
+  font-size: 1.2em;
+  padding-top: 10px;
+  position: absolute;
+
+}
+
+
+#live-search-results {
+	background: #404040;
+	overflow: auto;
+	position: absolute;
+	top: 40px;
+	width: 100%;
+	color: #fff;
+	opacity:0.8;
+    filter:alpha(opacity=40);
+/*
+	padding: 5px 10px;
+	max-height: 400px;
+	overflow: auto;
+
+
+	position: absolute;
+	z-index: 99;
+
+
+	border: 1px solid #A9A9A9;
+	border-width: 0 1px 1px 1px;
+*/
+  -moz-border-radius: 0 0 0 15px;
+  border-radius: 0 0 0 15px;    
+
+	-webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+#live-search-results ul{
+  list-style-type: circle;
+  margin: 0;
+  padding-left: 10px;
+  color: white;
+  font-size: 1.2em;
+}
+#live-search-results a{
+  color: white;
+}
+#live-search-results a:hover{
+  text-decoration: none;
+}
+
 
 /*Style the controls on game pages */
 .controls{
@@ -26,12 +77,8 @@ letter-spacing: 2px;
 }
 
 /*Twitter and facebook buttons in footer*/
-.spread{
+.spread, .pull-left{
 float: left;
-}
-
-.pull-left{
-float:left;
 }
 
 /*Remove styling for like buttons*/

@@ -14,7 +14,8 @@ Boardcaster::Application.routes.draw do
   get "signup" => "users#new", :as => "signup"  
   get "create" => "games#new", :as => "create"
   get "search" => "pages#search", :as => "search"
- 
+
+  get "live_search" => "pages#live_search"
   post "moves" => "moves#create"
   get "moves" => "moves#index"
   get "mgame" => "moves#mgame" 

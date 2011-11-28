@@ -33,7 +33,7 @@ class GamesController < ApplicationController
 
     if !@game.nil?
       @title = "Game | #{@game.title}"
-c
+
       @white = User.find_by_id(@game.user_id_white)
       @black = User.find_by_id(@game.user_id_black)
 

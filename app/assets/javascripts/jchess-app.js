@@ -13,7 +13,7 @@
 jQuery(document).ready(function() {
     
     //Fade notification bars (ie. "Login Successful" green bars)
-    setTimeout($('.success, .notice').fadeOut(5000), 15000);
+    //setTimeout($('.success, .notice').fadeOut(5000), 15000);
 
     if(document.getElementById("board-live")!=null){	
 	   setInterval(function() {	

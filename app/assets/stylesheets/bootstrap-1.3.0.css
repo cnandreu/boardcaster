@@ -528,7 +528,7 @@ blockquote small {
   font-size: 12px;
   font-weight: 300;
   line-height: 18px;
-  color: #bfbfbf;
+  color: black;
 }
 blockquote small:before {
   content: '\2014 \00A0';

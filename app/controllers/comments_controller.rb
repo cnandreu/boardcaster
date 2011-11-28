@@ -5,7 +5,7 @@
 # successful or if there was a failure. 
 
 class CommentsController < ApplicationController
-  
+
   def create
     @title = "New Comment"
     @game = Game.find(params[:comment][:game_id])

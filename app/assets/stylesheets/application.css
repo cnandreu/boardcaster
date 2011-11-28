@@ -13,9 +13,9 @@
 
 #live-search-results span{
   font-size: 1.2em;
-  padding-top: 10px;
-  position: absolute;
-
+  float: left;
+  margin-top: 10px; 
+  margin-left: 5px;
 }
 
 
@@ -28,19 +28,7 @@
 	color: #fff;
 	opacity:0.8;
     filter:alpha(opacity=40);
-/*
-	padding: 5px 10px;
-	max-height: 400px;
-	overflow: auto;
 
-
-	position: absolute;
-	z-index: 99;
-
-
-	border: 1px solid #A9A9A9;
-	border-width: 0 1px 1px 1px;
-*/
   -moz-border-radius: 0 0 0 15px;
   border-radius: 0 0 0 15px;    
 
@@ -49,8 +37,7 @@
 	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 #live-search-results ul{
-  list-style-type: circle;
-  margin: 0;
+
   padding-left: 10px;
   color: white;
   font-size: 1.2em;

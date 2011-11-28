@@ -1,0 +1,37 @@
+<%= form_for(@user, :html => { :class => "form-stacked"} ) do |f| %>  
+
+<fieldset>	
+<div class="clearfix">
+    <%= f.label :username %> 
+ 	<div class="input">
+    	<%= f.text_field :username, :autofocus => true  %>  
+	</div>
+</div>
+
+<div class="clearfix">
+    <%= f.label :email %> 
+	<div class="input"> 
+    	<%= f.text_field :email %>  
+  </div>
+</div>
+
+<div class="clearfix">  
+    <%= f.label :password %>  
+	<div class="input">
+    	<%= f.password_field :password %>  
+    </div>
+</div>
+
+<div class="clearfix">  
+    <%= f.label :password_confirmation %>  
+	<div class="input">
+    	<%= f.password_field :password_confirmation %>  
+    </div> 
+</div>
+</fieldset>
+
+<div class="actions">
+  <%= f.submit send_text, :class => 'btn primary' %>
+</div>
+
+<% end %>

@@ -1,0 +1,10 @@
+<ul>
+  <% if games.blank? %>
+    <li> No games played! </li>
+  <% else %>
+    <%games.each do |game| %>
+      <li><%= link_to game.title, game %></li>
+    <%end%>
+  <%end%>
+</ul>
+

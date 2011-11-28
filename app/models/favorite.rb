@@ -34,11 +34,11 @@ class Favorite < ActiveRecord::Base
   end
 
   #User can only like once
-  validates_each :user_id, :game_id  do |record, attr, value|
-    if Favorite.exists?( :user_id => [record.user_id, record.game_id], 
-                         :game_id => [record.user_id, record.game_id])
-       record.errors.add attr, 'Duplicate like detected'
-    end
-  end
+  #validates_each :user_id, :game_id  do |record, attr, value|
+  #  if Favorite.exists?( :user_id => [record.user_id, record.game_id], 
+  #                       :game_id => [record.user_id, record.game_id])
+  #     record.errors.add attr, 'Duplicate like detected'
+  #  end
+  #end
 
 end

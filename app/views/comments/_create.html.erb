@@ -1,0 +1,19 @@
+<%= form_for(@comment, :html => { :class => "form-stacked"} ) do |f| %>  
+
+  <fieldset>	
+
+    <%= f.hidden_field :game_id, :value => @game.id %>
+
+    <div class="clearfix">
+      <%= f.label :comment_data, "Type your comment here" %> 
+      <div class="input"> 
+        <%= f.text_area :comment_data, :id => "message_area" %>  	
+      </div>
+    </div>
+
+  </fieldset>
+
+  <div class="actions">
+    <%= f.submit 'Submit', :class => 'btn primary' %>
+  </div>
+<% end %>

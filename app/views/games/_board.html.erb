@@ -1,0 +1,16 @@
+<div class="container row">
+  <% if @game.live %>
+    <div id="board-live"></div>
+  <% else %>
+    <div id="board"></div>
+    <div class="controls">
+      <a id="board-back" href="#">Back</a> |
+      <a id="board-flip" href="#">Flip</a> |
+      <a id="board-next" href="#">Next</a> 
+      <p id="board-annot"></p>
+      <p id="pgn-string">      
+      <%= @pgn_string %>
+      </p>
+    </div>
+  <%end%>
+</div>

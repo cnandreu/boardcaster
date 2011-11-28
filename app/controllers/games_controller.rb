@@ -31,7 +31,8 @@ class GamesController < ApplicationController
     #"application_controller"
     @pgn_string = fens2pgn(move_array) 
 
-    if !@game.nil?
+    if !@game.nil? && User.exists?(@game.user_id_white) && User.exists?(@game.user_id_black) 
+
       @title = "Game | #{@game.title}"
 
       @white = User.find_by_id(@game.user_id_white)

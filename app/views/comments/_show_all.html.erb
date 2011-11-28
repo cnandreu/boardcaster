@@ -1,0 +1,13 @@
+<div class="container">
+  <% if @comments.nil? %>
+    <p>No comments yet!</p>
+  <% else %>
+    <% @comments.each do |comment| %>
+
+      <blockquote>
+        <p><%= comment.comment_data %></p>
+        <small><%= @users.find_by_id(comment.user_id).username%></small>
+      </blockquote>
+    <% end %>
+  <% end %>
+</div>

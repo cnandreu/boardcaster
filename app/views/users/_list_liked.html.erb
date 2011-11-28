@@ -1,0 +1,9 @@
+<ul>
+  <% if fav.blank? %>
+    <li> No games liked! </li>
+  <% else %>
+    <%fav.each do |liked| %>
+      <li><%= link_to @g.find_by_id(liked.game_id).title, @g.find_by_id(liked.game_id) %></li>
+    <%end%>
+  <%end%>
+</ul>

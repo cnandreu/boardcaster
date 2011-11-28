@@ -1,17 +1,11 @@
 <div class="page-header">
-
+<h1><%= @game.title %></h1>
   <%= render 'shared/error_messages', :target =>  @game %>
 
-  <h1><%= @game.title %></h1>
-  <%= form_for(@favorite, :html => { :class => "like"} ) do |frm| %>
-    <%= frm.hidden_field :game_id, :value => @game.id %>
+  <%= render 'favorites/like_button' %>
 
-    <% if current_user.favorites.where(:game_id => @game.id).count == 0 %> 
-      <%= frm.submit 'Like Game', :class => 'btn primary pull-right' %>
-    <% else %>
-      <%= frm.submit 'Unlike Game', :class => 'btn success pull-right' %>
-    <% end %>
-  <% end %>
+
+  
 </div>
 
 <ul>
@@ -21,58 +15,12 @@
 
 <h2>Game Board</h2>
 
-<div class="container row">
-  <% if @game.live %>
-    <div id="board-live"></div>
-  <% else %>
-    <div id="board"></div>
-    <div class="controls">
-      <a id="board-back" href="#">Back</a> |
-      <a id="board-flip" href="#">Flip</a> |
-      <a id="board-next" href="#">Next</a> 
-      <p id="board-annot"></p>
-      <p id="pgn-string">      
-      <%= @pgn_string %>
-      </p>
-    </div>
-  <%end%>
-</div>
+<%= render 'games/board' %>
 
 <h2>Comments</h2>
 
-<div class="container">
-  <% if @comments.nil? %>
-    <p>No comments yet!</p>
-  <% else %>
-    <% @comments.each do |comment| %>
-
-      <blockquote>
-        <p><%= comment.comment_data %></p>
-        <small><%= @users.find_by_id(comment.user_id).username%></small>
-      </blockquote>
-    <% end %>
-  <% end %>
-</div>
+<%= render 'comments/show_all' %>
 
 <h3>Leave a Comment</h3>
 
-<%= form_for(@comment, :html => { :class => "form-stacked"} ) do |f| %>  
-
-  <fieldset>	
-
-    <%= f.hidden_field :game_id, :value => @game.id %>
-
-    <div class="clearfix">
-      <%= f.label :comment_data, "Type your comment here" %> 
-      <div class="input"> 
-        <%= f.text_area :comment_data, :id => "message_area" %>  	
-      </div>
-    </div>
-
-  </fieldset>
-
-  <div class="actions">
-    <%= f.submit 'Submit', :class => 'btn primary' %>
-  </div>
-
-<% end %>
+<%= render 'comments/create' %>

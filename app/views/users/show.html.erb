@@ -10,32 +10,14 @@
 
   </div>
 
-
 <p class="pull-right"><%= gravatar_for @user %></p>
 
-<strong>Email: </strong>
-<ul>
-  <li><%= @user.email%></li>
-</ul>
+<strong>Details: </strong>
+<%= render 'users/list_details', :user => @user %>
 
 <strong>Games Played:</strong>
-<ul>
-  <% if @games.blank? %>
-    <li> No games played! </li>
-  <% else %>
-    <%@games.each do |game| %>
-      <li><%= link_to game.title, game %></li>
-    <%end%>
-  <%end%>
-</ul>
+<%= render 'users/list_played', :games => @games %>
 
 <strong>Games Liked:</strong>
-<ul>
-  <% if @fav.blank? %>
-    <li> No games liked! </li>
-  <% else %>
-    <%@fav.each do |liked| %>
-      <li><%= link_to @g.find_by_id(liked.game_id).title, @g.find_by_id(liked.game_id) %></li>
-    <%end%>
-  <%end%>
-</ul>
+<%= render 'users/list_liked', :fav => @fav, :games => @games %>
+

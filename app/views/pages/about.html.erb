@@ -1,9 +1,300 @@
+<style>
+	.portrait {
+		float: left;
+		width: 140px;
+		margin-right: 35px;
+		margin-bottom: 50px;
+	}
+
+	.portrait .name {
+		font-size: 14px;
+		line-height: 1.2em;
+		color: #0099ff;
+	}
+
+	.portrait .position {
+		font-size: 11px;
+		line-height: 1.2em;
+		color: gray;
+	}
+
+	.portrait .twitter {
+		font-size: 11px;
+		line-height: 1.2em;
+		color: gray;
+	}
+
+	.portrait .thumbnail {
+		width: 120px;
+		height: 120px;
+		background-image: url('/assets/team.jpg'); 
+		background-color: transparent; 
+		background-repeat: no-repeat;
+	}
+
+	.portrait .description {
+		z-index: 1000;
+		border-radius: 5px;
+		padding: 10px;
+		font-size: 12px;
+		line-height: 1.5em;
+		width: 300px;
+		height: 150px;
+		background: #0099ff;
+		color: white;
+		margin-top: -150px;
+		display: none;
+		border: 1px solid white;
+		box-sizing: border-box;
+	}
+
+
+.adams.bottom.center { background-position: 0px 0px; }
+.adams.bottom.left { background-position: -120px 0px; }
+.adams.bottom.right { background-position: -240px 0px; }
+.adams.middle.center { background-position: -360px 0px; }
+.adams.middle.left { background-position: -480px 0px; }
+.adams.middle.right { background-position: -600px 0px; }
+.adams.top.center { background-position: -720px 0px; }
+.adams.top.left { background-position: -840px 0px; }
+.adams.top.right { background-position: -960px 0px; }
+.adamw.bottom.center { background-position: 0px -120px; }
+.adamw.bottom.left { background-position: -120px -120px; }
+.adamw.bottom.right { background-position: -240px -120px; }
+.adamw.middle.center { background-position: -360px -120px; }
+.adamw.middle.left { background-position: -480px -120px; }
+.adamw.middle.right { background-position: -600px -120px; }
+.adamw.top.center { background-position: -720px -120px; }
+.adamw.top.left { background-position: -840px -120px; }
+.adamw.top.right { background-position: -960px -120px; }
+.alex.bottom.center { background-position: 0px -240px; }
+.alex.bottom.left { background-position: -120px -240px; }
+.alex.bottom.right { background-position: -240px -240px; }
+.alex.middle.center { background-position: -360px -240px; }
+.alex.middle.left { background-position: -480px -240px; }
+.alex.middle.right { background-position: -600px -240px; }
+.alex.top.center { background-position: -720px -240px; }
+.alex.top.left { background-position: -840px -240px; }
+.alex.top.right { background-position: -960px -240px; }
+.chen.bottom.center { background-position: 0px -360px; }
+.chen.bottom.left { background-position: -120px -360px; }
+.chen.bottom.right { background-position: -240px -360px; }
+.chen.middle.center { background-position: -360px -360px; }
+.chen.middle.left { background-position: -480px -360px; }
+.chen.middle.right { background-position: -600px -360px; }
+.chen.top.center { background-position: -720px -360px; }
+.chen.top.left { background-position: -840px -360px; }
+.chen.top.right { background-position: -960px -360px; }
+.doron.bottom.center { background-position: 0px -480px; }
+.doron.bottom.left { background-position: -120px -480px; }
+.doron.bottom.right { background-position: -240px -480px; }
+.doron.middle.center { background-position: -360px -480px; }
+.doron.middle.left { background-position: -480px -480px; }
+.doron.middle.right { background-position: -600px -480px; }
+.doron.top.center { background-position: -720px -480px; }
+.doron.top.left { background-position: -840px -480px; }
+.doron.top.right { background-position: -960px -480px; }
+.eran.bottom.center { background-position: 0px -600px; }
+.eran.bottom.left { background-position: -120px -600px; }
+.eran.bottom.right { background-position: -240px -600px; }
+.eran.middle.center { background-position: -360px -600px; }
+.eran.middle.left { background-position: -480px -600px; }
+.eran.middle.right { background-position: -600px -600px; }
+.eran.top.center { background-position: -720px -600px; }
+.eran.top.left { background-position: -840px -600px; }
+.eran.top.right { background-position: -960px -600px; }
+.itay.bottom.center { background-position: 0px -720px; }
+.itay.bottom.left { background-position: -120px -720px; }
+.itay.bottom.right { background-position: -240px -720px; }
+.itay.middle.center { background-position: -360px -720px; }
+.itay.middle.left { background-position: -480px -720px; }
+.itay.middle.right { background-position: -600px -720px; }
+.itay.top.center { background-position: -720px -720px; }
+.itay.top.left { background-position: -840px -720px; }
+.itay.top.right { background-position: -960px -720px; }
+.omer.bottom.center { background-position: 0px -840px; }
+.omer.bottom.left { background-position: -120px -840px; }
+.omer.bottom.right { background-position: -240px -840px; }
+.omer.middle.center { background-position: -360px -840px; }
+.omer.middle.left { background-position: -480px -840px; }
+.omer.middle.right { background-position: -600px -840px; }
+.omer.top.center { background-position: -720px -840px; }
+.omer.top.left { background-position: -840px -840px; }
+.omer.top.right { background-position: -960px -840px; }
+.oren.bottom.center { background-position: 0px -960px; }
+.oren.bottom.left { background-position: -120px -960px; }
+.oren.bottom.right { background-position: -240px -960px; }
+.oren.middle.center { background-position: -360px -960px; }
+.oren.middle.left { background-position: -480px -960px; }
+.oren.middle.right { background-position: -600px -960px; }
+.oren.top.center { background-position: -720px -960px; }
+.oren.top.left { background-position: -840px -960px; }
+.oren.top.right { background-position: -960px -960px; }
+.ron.bottom.center { background-position: 0px -1080px; }
+.ron.bottom.left { background-position: -120px -1080px; }
+.ron.bottom.right { background-position: -240px -1080px; }
+.ron.middle.center { background-position: -360px -1080px; }
+.ron.middle.left { background-position: -480px -1080px; }
+.ron.middle.right { background-position: -600px -1080px; }
+.ron.top.center { background-position: -720px -1080px; }
+.ron.top.left { background-position: -840px -1080px; }
+.ron.top.right { background-position: -960px -1080px; }
+.udi.bottom.center { background-position: 0px -1200px; }
+.udi.bottom.left { background-position: -120px -1200px; }
+.udi.bottom.right { background-position: -240px -1200px; }
+.udi.middle.center { background-position: -360px -1200px; }
+.udi.middle.left { background-position: -480px -1200px; }
+.udi.middle.right { background-position: -600px -1200px; }
+.udi.top.center { background-position: -720px -1200px; }
+.udi.top.left { background-position: -840px -1200px; }
+.udi.top.right { background-position: -960px -1200px; }
+.yoni.bottom.center { background-position: 0px -1320px; }
+.yoni.bottom.left { background-position: -120px -1320px; }
+.yoni.bottom.right { background-position: -240px -1320px; }
+.yoni.middle.center { background-position: -360px -1320px; }
+.yoni.middle.left { background-position: -480px -1320px; }
+.yoni.middle.right { background-position: -600px -1320px; }
+.yoni.top.center { background-position: -720px -1320px; }
+.yoni.top.left { background-position: -840px -1320px; }
+.yoni.top.right { background-position: -960px -1320px; }
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+	
+<script>
+	$(function() {
+		/*
+		$(".thumbnail").hover(function() {
+			var desc = $(this).parent().find(".description");
+			desc.fadeIn(100);
+
+		}, function() {
+			var desc = $(this).parent().find(".description");
+
+			desc.fadeOut(100);
+		});
+		*/
+
+		var thumbnails = $(".portrait .thumbnail");
+
+		$(window).mousemove(function(mouseEvent) {
+			thumbnails.each(function() {
+				var mouseX = mouseEvent.pageX;
+				var mouseY = mouseEvent.pageY;
+
+				var offset = $(this).offset();
+
+				var startX = offset.left;
+				var startY = offset.top;
+
+				var endX = startX + $(this).width();
+				var endY = startY + $(this).height();
+
+				$(this).removeClass("top middle bottom left center right");
+
+				if (mouseX < startX) {
+					$(this).addClass("left");
+				} else if (mouseX > endX) {
+					$(this).addClass("right");
+				} else {
+					$(this).addClass("center");
+				}
+
+				if (mouseY < startY) {
+					$(this).addClass("top");
+				} else if (mouseY > endY) {
+					$(this).addClass("bottom");
+				} else {
+					$(this).addClass("middle");
+				}
+
+			});
+		});
+
+	});
+
+
+</script>
+
+
+
+
+
+
+
+
 <div class="page-header">
     <h1>About <small>executive summary of our product</small></h1>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <p>The product presented is an electronic chess board that aims to solve to problem of chess enthusiasts not having a convenient way to watch chess matches. The board is capable of detecting when magnetic pieces are moved and transmitting live chess matches over the Internet without the need for any drivers or platform specific software. Those interested in watching the live chess match only need a modern web-browser and an Internet connection. To achieve this, a server connected to the Internet will be used as a middle-man. The electronic chess board will send the chess moves to the server, and the website will read from the server’s database to graphically display the chess match on an Internet browser. Our system also has the unique feature of visually displaying valid moves to player when a piece is raised with lights located throughout each square on the board.</p>
 
 <p>Current and potential customers for Boardcaster include chess tournament organizers, any chess player from professionals to very beginners and due to the open hardware/software nature of your product, we expect to attract people interested in expanding the feature set of the electronic board, the firmware and the server side software. The market we’re targeting is very large because chess is one of the world's most popular games.</p>
 
 <p>The team succeeded in developing an open-hardware and free and open source software which makes the product very customizable. It is also portable due to our battery powered design, wireless, real-time, easy to use and low cost compared to similar products.</p>
+
+
+<div class="page-header">
+    <h1>The Team <small>acm5pt</small></h1>
+</div>
+
+
+<div class="the-team">
+
+
+
+		<div class="portrait">
+			<div class="description">A veteran software engineer with 10+ years of experience developing scalable, high-performance applications. Alumni of an elite technology unit of the intelligence core in the IDF. Skilled in a variety of software languages, tools, and methodologies with an in depth expertise in Microsoft .Net technologies and iOS development. Worked as the lead iOS developer at Fring.</div>
+			<div class="thumbnail adams middle center"></div>
+			<div class="name">Carlos Andreu</div>
+            <div class="position">Software Engineer</div>
+            <div class="position">Project Manager</div>
+		</div>
+
+
+
+		<div class="portrait">
+			<div class="description">A highly driven tech entrepreneur with great people skills and a strong passion for creating simple yet effective consumer products. Alumni of an elite technology unit in the IDF (Mamram). Co-Founder & CEO of a web marketing agency. Main expertise in generating traffic in low cost via SEM, SEO, social media & affiliate marketing.</div>
+			<div class="thumbnail omer middle center"></div>
+			<div class="name">Richard Kaufman</div>
+			<div class="position">Firmware Engineer</div>
+		</div>
+		<div class="portrait">
+			<div class="description">A seasoned technologist, experienced mostly in research work including machine learning, data mining and classification algorithms. Served as an Intelligence officer in the IDF's elite technological unit. Holds an MBA in finance and BS.c in computer science.</div>
+			<div class="thumbnail yoni middle center"></div>
+			<div class="name">Daniel Gonzalez</div>
+			<div class="position">Hardware Engineer</div>
+		</div>
+		<div class="portrait">
+			<div class="description">Hacker style technologist with extensive understanding in mobile, security, research methodologies, web and more. Deep understanding of both high and low level programming. Former researcher at the IDF's intelligence Corps. Holds a B.Sc in Computer Science.</div>
+			<div class="thumbnail itay middle center"></div>
+			<div class="name">Gabriel Perez</div>
+			<div class="position">LED Engineer</div>
+		</div>
+		<div class="portrait">
+			<div class="description">Software engineer with vast experience in developing and maintaining large scale systems (distributed systems expert). Served as a captain in the IAF's technological unit. Holds an MS.c in applied math.</div>
+			<div class="thumbnail alex middle center"></div>
+			<div class="name">Francisco De La Cruz</div>
+			<div class="position">Software Engineer Hardware Engineer</div>
+		</div>
+        
+</div>
+</div>
